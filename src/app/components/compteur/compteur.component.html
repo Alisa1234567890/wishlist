@@ -1,0 +1,13 @@
+<div class="compteur">
+  <h2 class="compteur-titre">Compteur</h2>
+
+  <p class="compteur-valeur">{{ count() }}</p>
+  <p class="compteur-double">Double : {{ double() }}</p>
+  <p class="compteur-message">{{ message() }}</p>
+
+  <div class="compteur-boutons">
+    <button class="btn-compteur btn-decrement" (click)="decrementer()">−</button>
+    <button class="btn-compteur btn-reset" (click)="reset()">Reset</button>
+    <button class="btn-compteur btn-increment" (click)="incrementer()">+</button>
+  </div>
+</div>

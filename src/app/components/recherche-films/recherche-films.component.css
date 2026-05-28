@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+.recherche {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recherche-titre {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.recherche-input {
+  padding: 0.6rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 420px;
+  outline: none;
+  background: #fff;
+  color: #1e293b;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.recherche-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.spinner {
+  color: #64748b;
+  font-style: italic;
+  margin: 0;
+}
+
+.grille-films {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.message-vide,
+.message-aide {
+  color: #94a3b8;
+  font-style: italic;
+  margin: 0;
+}
+
+.film-detail {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.film-detail-titre {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.film-detail-synopsis {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}

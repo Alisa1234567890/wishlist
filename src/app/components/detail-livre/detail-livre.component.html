@@ -1,0 +1,28 @@
+<div class="detail-livre">
+  @if (livre(); as l) {
+    <div class="detail-livre-contenu">
+      <img [src]="l.couverture" [alt]="l.titre" class="detail-couverture">
+
+      <div class="detail-infos">
+        <h1 class="detail-titre">{{ l.titre }}</h1>
+        <p class="detail-auteur">{{ l.auteur }}</p>
+
+        <div class="detail-meta">
+          <span class="detail-genre">{{ l.genre }}</span>
+          <span>{{ l.annee }}</span>
+          <span>⭐ {{ l.note }} / 5</span>
+          <span>{{ l.lu ? 'Lu' : 'Non lu' }}</span>
+        </div>
+
+        <div class="detail-actions">
+          <button class="btn btn-primary" (click)="toggleLu()">
+            {{ l.lu ? 'Marquer comme non lu' : 'Marquer comme lu' }}
+          </button>
+          <a class="btn btn-secondary" routerLink="/">Retour</a>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <p class="message-introuvable">Livre introuvable</p>
+  }
+</div>

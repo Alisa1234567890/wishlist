@@ -1,0 +1,102 @@
+/* Fourni complet — ne pas modifier */
+
+.compteur {
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.compteur-titre {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 24px 0;
+}
+
+.compteur-valeur {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+  margin: 0 0 8px 0;
+  line-height: 1;
+}
+
+.compteur-double {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 12px 0;
+}
+
+.compteur-message {
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 28px;
+  background: #e0e7ff;
+  color: #4f46e5;
+}
+
+.compteur-boutons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-compteur {
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-increment,
+.btn-decrement {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.btn-increment {
+  background: #4f46e5;
+  color: white;
+}
+
+.btn-increment:hover {
+  background: #4338ca;
+}
+
+.btn-decrement {
+  background: #e0e7ff;
+  color: #4f46e5;
+}
+
+.btn-decrement:hover {
+  background: #c7d2fe;
+}
+
+.btn-reset {
+  padding: 0 20px;
+  height: 36px;
+  border-radius: 18px;
+  background: white;
+  color: #6b7280;
+  border: 1.5px solid #e5e7eb;
+  font-size: 0.875rem;
+}
+
+.btn-reset:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}

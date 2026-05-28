@@ -1,0 +1,112 @@
+/* Fourni complet — ne pas modifier */
+
+.liste-livres {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.liste-livres-titre {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 28px 0;
+}
+
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.filtres-titre {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.filtres-lu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.btn-filtre {
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #e5e7eb;
+  background: white;
+  color: #374151;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.btn-filtre:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+}
+
+.btn-filtre.actif {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+}
+
+.compteur-resultats {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+}
+
+.grille-livres {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.message-vide {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 48px;
+  color: #9ca3af;
+  font-size: 1rem;
+  background: white;
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+}
+
+.separateur {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 0 0 32px 0;
+}
+
+.demo-titre {
+  text-align: center;
+  color: #6b7280;
+  margin: 0 0 24px 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .liste-livres {
+    padding: 20px 16px;
+  }
+
+  .grille-livres {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grille-livres {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,37 @@
+<div class="recherche">
+  <h2 class="recherche-titre">Rechercher un film</h2>
+
+  <input
+    type="text"
+    class="recherche-input"
+    placeholder="Titre du film..."
+    (input)="onSearch($any($event.target).value)"
+  >
+
+  @if (films$ | async; as films) {
+    <div class="grille-films">
+      @for (film of films; track film.id) {
+        <app-film-card
+          [film]="film"
+          (filmSelectionne)="onFilmSelectionne($event)"
+          [disabled]="filmSelectionne?.id === film.id"
+        />
+      } @empty {
+        <p>Aucun résultat</p>
+      }
+    </div>
+  }
+
+  @if (filmDetail$) {
+    @if (filmDetail$ | async; as detail) {
+      <div class="film-detail">
+        <h3 class="film-detail-titre">{{ detail.title }}</h3>
+        <p class="film-detail-synopsis">{{ detail.overview }}</p>
+        <p>Note : {{ detail.vote_average | number:'1.1-1' }} / 10</p>
+        <p>Sortie : {{ detail.release_date }}</p>
+      </div>
+    }
+  }
+
+  <p class="message-aide">Tapez au moins 2 caractères pour lancer la recherche.</p>
+</div>

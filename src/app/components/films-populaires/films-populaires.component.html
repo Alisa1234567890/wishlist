@@ -1,0 +1,13 @@
+<div class="films-populaires">
+  <h2 class="films-populaires-titre">Films populaires</h2>
+
+  @if (films$ | async; as films) {
+    <div class="grille-films">
+      @for (film of films; track trackById($index, film)) {
+        <app-film-card [film]="film" />
+      } @empty {
+        <p>Aucun film disponible</p>
+      }
+    </div>
+  }
+</div>
