@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './shared/home/home.component';
-import { FilmographieComponent } from './features/films/filmographie/filmographie.component';
-import { FilmDetailComponent } from './features/films/film-detail/film-detail.component';
-import { WishlistComponent } from './features/wishlist/wishlist';
+import { HomeComponent } from './shared/components/home/home.component';
+import { FilmographieComponent } from './features/components/films/filmographie/filmographie.component';
+import { FilmDetailComponent } from './features/components/films/film-detail/film-detail.component';
+import { WishlistComponent } from './features/components/wishlist/wishlistcomponent/wishlist';
 
 export const routes: Routes = [
   { path: '', component: FilmographieComponent},

@@ -1,0 +1,13 @@
+<h2 class="title">Ma Wishlist</h2>
+
+<div *ngIf="films.length === 0" class="empty">
+  Aucun film dans la wishlist
+</div>
+
+<div class="grid">
+  <app-wishlist-card 
+    *ngFor="let f of films" 
+    [film]="f"
+    (retirer)="onRetirerFilm($event)">
+  </app-wishlist-card>
+</div>

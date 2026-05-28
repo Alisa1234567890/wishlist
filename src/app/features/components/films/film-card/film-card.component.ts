@@ -1,16 +1,16 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { TmdbService } from '../../../core/services/tmdb.service';
-import { Film } from '../../../core/models/film.model';
+import { TmdbService } from '../../../../core/services/tmdb.service';
+import { Film } from '../../../../core/models/film.model';
 import { Router } from '@angular/router';
-import { WishlistService } from '../../wishlist/wishlist.service';
+import { WishlistService } from '../../wishlist/wishlistcomponent/wishlist.service';
 
 @Component({
   selector: 'app-film-card',
   standalone: true,
   imports: [DecimalPipe],
-  templateUrl: './film-card.component.html',
-  styleUrl: './film-card.component.css'
+  templateUrl: '../../films/film-card/film-card.component.html',
+  styleUrl: '../../films/film-card/film-card.component.css'
 })
 export class FilmCardComponent {
   readonly tmdbService = inject(TmdbService);

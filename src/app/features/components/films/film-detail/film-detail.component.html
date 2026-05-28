@@ -1,0 +1,22 @@
+<div *ngIf="film$ | async as film" class="detail">
+  <img
+    class="poster"
+    [src]="tmdbService.getPosterUrl(film.poster_path)"
+    [alt]="film.title"
+  />
+  <h1>{{ film.title }}</h1>
+  <p class="year">
+    {{ film.release_date?.slice(0,4) }}
+  </p>
+  <p class="note">
+    {{ film.vote_average | number:'1.1-1' }} / 10
+  </p>
+
+  <button (click)="clicAjout(film)">
+    + Wishlist
+  </button>
+
+  <p *ngIf="estAjoute" class="message-succes">
+    Le film a bien été ajouté à votre wishlist !
+  </p>
+</div>

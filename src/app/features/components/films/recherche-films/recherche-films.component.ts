@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { AsyncPipe, DecimalPipe } from '@angular/common';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, switchMap, map } from 'rxjs';
-import { TmdbService } from '../../../core/services/tmdb.service';
-import { Film } from '../../../core/models/film.model';
+import { TmdbService } from '../../../../core/services/tmdb.service';
+import { Film } from '../../../../core/models/film.model';
 import { FilmCardComponent } from '../film-card/film-card.component';
 
 @Component({

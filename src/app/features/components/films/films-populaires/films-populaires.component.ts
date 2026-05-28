@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { Observable, map } from 'rxjs';
-import { TmdbService } from '../../../core/services/tmdb.service';
-import { Film } from '../../../core/models/film.model';
+import { TmdbService } from '../../../../core/services/tmdb.service';
+import { Film } from '../../../../core/models/film.model';
 import { FilmCardComponent } from '../film-card/film-card.component';
 
 @Component({
