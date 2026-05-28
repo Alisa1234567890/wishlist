@@ -1,0 +1,14 @@
+<h2>Wishlist</h2>
+
+<div *ngIf="films.length === 0">
+  Aucun film
+</div>
+
+<div *ngFor="let film of films">
+  <h3>{{ film.title }}</h3>
+  <p>{{ film.release_date?.slice(0,4) }}</p>
+
+  <button (click)="remove(film.id)">
+    Supprimer
+  </button>
+</div>

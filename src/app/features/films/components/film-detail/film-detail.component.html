@@ -1,0 +1,17 @@
+<div *ngIf="film as f" class="film-card">
+
+    <img
+      [src]="tmdbService.getPosterUrl(f.poster_path)"
+      [alt]="f.title"
+      class="film-poster"
+    />
+  
+    <div class="film-card-body">
+      <h3>{{ f.title }}</h3>
+  
+      <p>{{ f.release_date?.slice(0,4) }}</p>
+  
+      <p>{{ f.vote_average | number:'1.1-1' }} / 10</p>
+    </div>
+  
+  </div>
