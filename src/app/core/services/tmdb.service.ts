@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TMDB_CONFIG } from '../config/tmdb.config';
-import { Film, TmdbResponse } from '../../features/models/film.model';
+import { Film, TmdbResponse } from '../models/film.model';
 import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })

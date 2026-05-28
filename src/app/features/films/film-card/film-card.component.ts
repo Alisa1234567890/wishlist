@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { TmdbService } from '../../../core/services/tmdb.service';
-import { Film } from '../../models/film.model';
+import { Film } from '../../../core/models/film.model';
 import { Router } from '@angular/router';
 import { WishlistService } from '../../wishlist/wishlist.service';
 

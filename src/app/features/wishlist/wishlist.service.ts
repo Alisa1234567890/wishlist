@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Film } from '../models/film.model';
+import { Film } from '../../core/models/film.model';
 
 @Injectable({ providedIn: 'root' })
 export class WishlistService {

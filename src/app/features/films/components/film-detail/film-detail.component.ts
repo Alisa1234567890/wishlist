@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { TmdbService } from '../../../../core/services/tmdb.service';
-import { Film } from '../../../models/film.model';
+import { Film } from '../../../../core/models/film.model';
 
 @Component({
   selector: 'app-film-detail',

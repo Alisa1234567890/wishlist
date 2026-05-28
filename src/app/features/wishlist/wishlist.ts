@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WishlistService } from './wishlist.service';
-import { Film } from '../models/film.model';
+import { Film } from '../../core/models/film.model';
 
 @Component({
   selector: 'app-wishlist',
