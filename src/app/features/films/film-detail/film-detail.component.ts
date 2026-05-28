@@ -1,8 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { TmdbService } from '../../../../core/services/tmdb.service';
-import { Film } from '../../../../core/models/film.model';
+import { TmdbService } from '../../../core/services/tmdb.service';
+import { Film } from '../../../core/models/film.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-film-detail',
@@ -12,19 +13,15 @@ import { Film } from '../../../../core/models/film.model';
   styleUrl: './film-detail.component.css'
 })
 export class FilmDetailComponent implements OnInit {
-
   private route = inject(ActivatedRoute);
   tmdbService = inject(TmdbService);
-
-  film?: Film;
+  
+  film$!: Observable<Film>;
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-
-    if (!id) return;
-
-    this.tmdbService.getMovieById(Number(id)).subscribe((data) => {
-      this.film = data;
-    });
+    if (id) {
+      this.film$ = this.tmdbService.getMovieById(Number(id));
+    }
   }
 }

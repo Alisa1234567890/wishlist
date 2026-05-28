@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './shared/home/home.component';
 import { FilmographieComponent } from './features/films/filmographie/filmographie.component';
-import { FilmDetailComponent } from './features/films/components/film-detail/film-detail.component';
+import { FilmDetailComponent } from './features/films/film-detail/film-detail.component';
 import { WishlistComponent } from './features/wishlist/wishlist';
 
 export const routes: Routes = [
