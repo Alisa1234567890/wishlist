@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
-import { TmdbService } from '../../services/tmdb.service';
+import { TmdbService } from '../../core/services/tmdb.service';
 import { Film } from '../../models/film.model';
 
 @Component({

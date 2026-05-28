@@ -1,8 +1,8 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { TMDB_CONFIG } from '../config/tmdb.config';
-import { Film, TmdbResponse } from '../models/film.model';
+import { Film, TmdbResponse } from '../../features/models/film.model';
+import { Observable, forkJoin, map } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class TmdbService {
@@ -40,5 +40,34 @@ export class TmdbService {
   getPosterUrl(posterPath: string | null): string {
     if (!posterPath) return 'assets/no-poster.png';
     return `${this.config.imageBaseUrl}${posterPath}`;
+  }
+
+  getAllMovies(): Observable<TmdbResponse> {
+    const requests = [];
+  
+    for (let page = 1; page <= 10; page++) {
+      requests.push(
+        this.http.get<TmdbResponse>(
+          `${this.config.baseUrl}/discover/movie`,
+          {
+            headers: this.headers,
+            params: {
+              language: 'fr-FR',
+              page: page.toString(),
+              sort_by: 'popularity.desc'
+            }
+          }
+        )
+      );
+    }
+  
+    return forkJoin(requests).pipe(
+      map((responses) => ({
+        page: 1,
+        results: responses.flatMap(r => r.results),
+        total_pages: responses[0].total_pages,
+        total_results: responses[0].total_results
+      }))
+    );
   }
 }

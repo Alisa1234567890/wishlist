@@ -3,7 +3,7 @@
 
   <div class="film-card-body">
     <h3 class="film-titre">{{ film.title }}</h3>
-    <p class="film-annee">{{ film.release_date.slice(0, 4) }}</p>
+    <p class="film-annee">{{ film.release_date?.slice(0, 4) }}</p>
     <p class="film-note">{{ film.vote_average | number:'1.1-1' }} / 10</p>
     <button class="btn-detail" (click)="selectionner()" [disabled]="disabled">Voir détail</button>
   </div>
