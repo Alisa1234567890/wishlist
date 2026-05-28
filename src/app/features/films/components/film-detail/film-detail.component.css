@@ -1,0 +1,23 @@
+.detail {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .poster {
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  }
+  
+  h1 {
+    margin-top: 20px;
+  }
+  
+  .year {
+    opacity: 0.7;
+  }
+  
+  .note {
+    font-size: 18px;
+    margin-top: 10px;
+  }

@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { TmdbService } from '../../../../core/services/tmdb.service';
 import { Film } from '../../../models/film.model';
 
@@ -9,22 +9,22 @@ import { Film } from '../../../models/film.model';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './film-detail.component.html',
-  styleUrls: []
+  styleUrl: './film-detail.component.css'
 })
-export class FilmDetailComponent {
+export class FilmDetailComponent implements OnInit {
 
   private route = inject(ActivatedRoute);
-  readonly tmdbService = inject(TmdbService);
+  tmdbService = inject(TmdbService);
 
   film?: Film;
 
-  constructor() {
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
 
-    if (id) {
-      this.tmdbService.getMovieById(Number(id)).subscribe((data) => {
-        this.film = data;
-      });
-    }
+    if (!id) return;
+
+    this.tmdbService.getMovieById(Number(id)).subscribe((data) => {
+      this.film = data;
+    });
   }
 }

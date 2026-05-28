@@ -1,14 +1,33 @@
-<h2>Wishlist</h2>
+<h2 class="title">Ma Wishlist</h2>
 
-<div *ngIf="films.length === 0">
-  Aucun film
+<div *ngIf="films.length === 0" class="empty">
+  Aucun film dans la wishlist
 </div>
 
-<div *ngFor="let film of films">
-  <h3>{{ film.title }}</h3>
-  <p>{{ film.release_date?.slice(0,4) }}</p>
+<div class="grid">
 
-  <button (click)="remove(film.id)">
-    Supprimer
-  </button>
+  <div *ngFor="let film of films" class="card">
+
+    <img
+      class="poster"
+      [src]="film.poster_path ? 'https://image.tmdb.org/t/p/w300' + film.poster_path : ''"
+      [alt]="film.title"
+    />
+
+    <div class="content">
+
+      <h3 class="title-film">{{ film.title }}</h3>
+
+      <p class="year">
+        {{ film.release_date?.slice(0,4) || 'N/A' }}
+      </p>
+
+      <button class="btn-remove" (click)="remove(film.id)">
+        Retirer
+      </button>
+
+    </div>
+
+  </div>
+
 </div>
